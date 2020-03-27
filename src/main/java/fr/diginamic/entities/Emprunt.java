@@ -170,7 +170,7 @@ public class Emprunt {
 	@Override
 	public String toString() {
 		return "Emprunt [id=" + id + ", date_debut=" + date_debut + ", date_fin=" + date_fin + ", delais=" + delais
-				+ ", client=" + client + "]";
+				+ "]";
 	}
 
 }

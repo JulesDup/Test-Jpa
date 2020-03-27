@@ -92,17 +92,31 @@ public class Client {
 		this.prenom = prenom;
 	}
 
-	@Override
-	public String toString() {
-		return "Client [id=" + id + ", nom=" + nom + ", prenom=" + prenom + "]";
-	}
-
-	
-	
-//	
 //	@Override
 //	public String toString() {
-//		return "Client [id=" + id + ", nom=" + nom + ", prenom=" + prenom +" listEmp=" + listEmp + "]";
+//		return "Client [id=" + id + ", nom=" + nom + ", prenom=" + prenom + "]";
 //	}
+	/**
+	 * Getter
+	 * 
+	 * @return the listEmp
+	 */
+	public List<Emprunt> getListEmp() {
+		return listEmp;
+	}
+
+	/**
+	 * Setter
+	 * 
+	 * @param listEmp the listEmp to set
+	 */
+	public void setListEmp(List<Emprunt> listEmp) {
+		this.listEmp = listEmp;
+	}
+
+	@Override
+	public String toString() {
+		return "Client [id=" + id + ", nom=" + nom + ", prenom=" + prenom + " listEmp=" + listEmp + "]";
+	}
 
 }

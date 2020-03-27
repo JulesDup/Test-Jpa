@@ -11,33 +11,36 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
 
+import fr.diginamic.dao.EmpruntDao;
 import fr.diginamic.entities.Emprunt;
 import fr.diginamic.entities.Livre;
 
 public class TestJpaTp3 {
-	private static final Logger LOGGER = Logger.getLogger(TestJpa.class.getName());
+	private static final Logger LOGGER = Logger.getLogger(TestJpaTp3.class.getName());
 
 	public static void main(String[] args) {
+//
+//		// creation factory et manager
+//
+//		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("biblio-pu");
+//		EntityManager entityManager = entityManagerFactory.createEntityManager();
+////		Réaliser une requête qui permet d’extraire un emprunt et tous ses livres associés.
+//
+////		 requete JPQL
+//
+//		TypedQuery<Emprunt> query = entityManager.createQuery("select e from Emprunt e where e.id=2", Emprunt.class);
+//		List<Emprunt> listEmp = query.getResultList();
+//		Set<Livre> setLivre = listEmp.get(0).getLivres();
 
-		// creation factory et manager
-
-		EntityManagerFactory entityManagerFactory2 = Persistence.createEntityManagerFactory("biblio-pu");
-		EntityManager entityManager2 = entityManagerFactory2.createEntityManager();
-
-//		Réaliser une requête qui permet d’extraire un emprunt et tous ses livres associés.
-
-//		 requete JPQL
-		TypedQuery<Emprunt> query = entityManager2.createQuery("select e from Emprunt e where e.id=2", Emprunt.class);
-		List<Emprunt> listEmp = query.getResultList();
-		Set<Livre> setLivre = new HashSet<>();
-		
-		for (Emprunt courant : listEmp) {
-			
+		EmpruntDao empDao = new EmpruntDao();
+		List<Livre> listLivre = empDao.getLivresByIdEmprunt(2);
+		for (Livre courant : listLivre) {
+			System.out.println(courant);
 		}
-
-		entityManager2.close();
-
-		entityManagerFactory2.close();
+		List<Emprunt> ListEmprunt = empDao.getEmpruntByClient(3);
+		for (Emprunt courant : ListEmprunt) {
+			System.out.println(courant);
+		}
 
 	}
 

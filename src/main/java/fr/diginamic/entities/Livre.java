@@ -23,7 +23,7 @@ public class Livre {
 	private String auteur;
 
 	@ManyToMany(mappedBy = "livres")
-	private Set<Emprunt> reservations;
+	private Set<Emprunt> emprunts;
 
 	/**
 	 * Constructeur
@@ -99,6 +99,24 @@ public class Livre {
 	 */
 	public void setId(Integer id) {
 		this.id = id;
+	}
+
+	/**
+	 * Getter
+	 * 
+	 * @return the emprunts
+	 */
+	public Set<Emprunt> getEmprunts() {
+		return emprunts;
+	}
+
+	/**
+	 * Setter
+	 * 
+	 * @param emprunts the emprunts to set
+	 */
+	public void setEmprunts(Set<Emprunt> emprunts) {
+		this.emprunts = emprunts;
 	}
 
 	@Override
