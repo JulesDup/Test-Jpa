@@ -1,4 +1,4 @@
-package fr.diginamic.main;
+package fr.diginamic.biblio.main;
 
 import java.util.HashSet;
 import java.util.List;
@@ -11,9 +11,9 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
 
-import fr.diginamic.dao.EmpruntDao;
-import fr.diginamic.entities.Emprunt;
-import fr.diginamic.entities.Livre;
+import fr.diginamic.biblio.dao.EmpruntDao;
+import fr.diginamic.biblio.entities.Emprunt;
+import fr.diginamic.biblio.entities.Livre;
 
 public class TestJpaTp3 {
 	private static final Logger LOGGER = Logger.getLogger(TestJpaTp3.class.getName());

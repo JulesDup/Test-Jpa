@@ -1,4 +1,4 @@
-package fr.diginamic.main;
+package fr.diginamic.biblio.main;
 
 import java.util.List;
 import java.util.logging.Level;
@@ -11,9 +11,9 @@ import javax.persistence.TypedQuery;
 
 import org.omg.CORBA.PRIVATE_MEMBER;
 
-import fr.diginamic.dao.ILivreDao;
-import fr.diginamic.dao.LivreDao;
-import fr.diginamic.entities.Livre;
+import fr.diginamic.biblio.dao.ILivreDao;
+import fr.diginamic.biblio.dao.LivreDao;
+import fr.diginamic.biblio.entities.Livre;
 
 public class TestJpa {
 	private static final Logger LOGGER = Logger.getLogger(TestJpa.class.getName());

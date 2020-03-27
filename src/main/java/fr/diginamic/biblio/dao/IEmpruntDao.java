@@ -1,9 +1,9 @@
-package fr.diginamic.dao;
+package fr.diginamic.biblio.dao;
 
 import java.util.List;
 
-import fr.diginamic.entities.Emprunt;
-import fr.diginamic.entities.Livre;
+import fr.diginamic.biblio.entities.Emprunt;
+import fr.diginamic.biblio.entities.Livre;
 
 public interface IEmpruntDao {
 	public List<Livre> getLivresByIdEmprunt(int id);

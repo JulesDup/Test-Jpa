@@ -1,8 +1,8 @@
-package fr.diginamic.dao;
+package fr.diginamic.biblio.dao;
 
 import java.util.List;
 
-import fr.diginamic.entities.Livre;
+import fr.diginamic.biblio.entities.Livre;
 
 public interface ILivreDao {
 	public Livre getLivreById(int id);

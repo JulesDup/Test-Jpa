@@ -1,4 +1,4 @@
-package fr.diginamic.dao;
+package fr.diginamic.biblio.dao;
 
 import java.util.List;
 
@@ -7,7 +7,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
 
-import fr.diginamic.entities.Livre;
+import fr.diginamic.biblio.entities.Livre;
 
 public class LivreDao implements ILivreDao {
 

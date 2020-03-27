@@ -1,4 +1,4 @@
-package fr.diginamic.entities;
+package fr.diginamic.biblio.entities;
 
 import java.util.logging.Logger;
 
@@ -9,7 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import fr.diginamic.main.TestJpa;
+import fr.diginamic.biblio.main.TestJpa;
 
 @Entity
 @Table(name = "fournisseur")
