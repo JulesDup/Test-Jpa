@@ -11,6 +11,8 @@ import javax.persistence.TypedQuery;
 
 import org.omg.CORBA.PRIVATE_MEMBER;
 
+import fr.diginamic.dao.ILivreDao;
+import fr.diginamic.dao.LivreDao;
 import fr.diginamic.entities.Livre;
 
 public class TestJpa {
@@ -18,28 +20,22 @@ public class TestJpa {
 
 	public static void main(String[] args) {
 
-		
 ///TP1		
 		// creation factory et manager
 
-		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("biblio-pu");
-		EntityManager entityManager = entityManagerFactory.createEntityManager();
-
 ///TP2
 		// Find utilisant l'ID
-		Livre livre = entityManager.find(Livre.class, 1);
-		Livre livre2 = entityManager.find(Livre.class, 2);
+		ILivreDao livreDao = new LivreDao();
+		Livre livre = livreDao.getLivreById(2);
+		Livre livre2 = livreDao.getLivreById(1);
 
 		LOGGER.log(Level.INFO, "instance de livre " + livre.toString());
 		LOGGER.log(Level.INFO, "instance de livre2 " + livre2.toString());
 
 		// recherche avec requete JPQL
 
-		TypedQuery<Livre> query = entityManager.createQuery("select l from Livre l where l.auteur='Jules Verne'",
-				Livre.class);
-		List<Livre> listLiv = query.getResultList();
-
 		// voir en console
+		List<Livre> listLiv = livreDao.getLivreByAuteur("Jules Verne");
 		for (Livre courante : listLiv) {
 			System.out.println(courante.getTitre());
 		}
@@ -48,15 +44,10 @@ public class TestJpa {
 
 		// recherche partitre de livre
 
-		TypedQuery<Livre> query2 = entityManager
-				.createQuery("select l from Livre l where l.titre='Vingt mille lieues sous les mers'", Livre.class);
-		List<Livre> listLiv2 = query2.getResultList();
+		Livre livre3 = livreDao.getLivreByTitre("Vingt mille lieues sous les mers");
 
-		LOGGER.log(Level.INFO, "Titre livre de Jules Verne : " + listLiv2.get(0).getTitre());
+		LOGGER.log(Level.INFO, "Titre livre de Jules Verne : " + livre3);
 
-		entityManager.close();
-
-		entityManagerFactory.close();
 	}
 
 }
