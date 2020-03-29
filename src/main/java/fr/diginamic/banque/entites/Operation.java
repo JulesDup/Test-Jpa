@@ -35,4 +35,111 @@ public class Operation {
 	@JoinColumn(name = "ID_COMPTE")
 	private Compte compte;
 
+	public Operation() {
+
+	}
+
+	/**
+	 * Constructeur
+	 * 
+	 * @param date
+	 * @param montant
+	 * @param motif
+	 * @param compte
+	 */
+	public Operation(LocalDateTime date, Double montant, String motif, Compte compte) {
+		super();
+		this.date = date;
+		this.montant = montant;
+		this.motif = motif;
+		this.compte = compte;
+	}
+
+	/**
+	 * Getter
+	 * 
+	 * @return the id
+	 */
+	public Integer getId() {
+		return id;
+	}
+
+	/**
+	 * Getter
+	 * 
+	 * @return the date
+	 */
+	public LocalDateTime getDate() {
+		return date;
+	}
+
+	/**
+	 * Getter
+	 * 
+	 * @return the montant
+	 */
+	public Double getMontant() {
+		return montant;
+	}
+
+	/**
+	 * Getter
+	 * 
+	 * @return the motif
+	 */
+	public String getMotif() {
+		return motif;
+	}
+
+	/**
+	 * Getter
+	 * 
+	 * @return the compte
+	 */
+	public Compte getCompte() {
+		return compte;
+	}
+
+	/**
+	 * Setter
+	 * 
+	 * @param date the date to set
+	 */
+	public void setDate(LocalDateTime date) {
+		this.date = date;
+	}
+
+	/**
+	 * Setter
+	 * 
+	 * @param montant the montant to set
+	 */
+	public void setMontant(Double montant) {
+		this.montant = montant;
+	}
+
+	/**
+	 * Setter
+	 * 
+	 * @param motif the motif to set
+	 */
+	public void setMotif(String motif) {
+		this.motif = motif;
+	}
+
+	/**
+	 * Setter
+	 * 
+	 * @param compte the compte to set
+	 */
+	public void setCompte(Compte compte) {
+		this.compte = compte;
+	}
+
+	@Override
+	public String toString() {
+		return "Operation [id=" + id + ", date=" + date + ", montant=" + montant + ", motif=" + motif + ", compte="
+				+ compte + "]";
+	}
+
 }

@@ -12,8 +12,8 @@ import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
 
 import fr.diginamic.biblio.dao.EmpruntDao;
-import fr.diginamic.biblio.entities.Emprunt;
-import fr.diginamic.biblio.entities.Livre;
+import fr.diginamic.biblio.entites.Emprunt;
+import fr.diginamic.biblio.entites.Livre;
 
 public class TestJpaTp3 {
 	private static final Logger LOGGER = Logger.getLogger(TestJpaTp3.class.getName());

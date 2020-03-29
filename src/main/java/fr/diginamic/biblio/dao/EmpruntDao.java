@@ -9,8 +9,8 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
 
-import fr.diginamic.biblio.entities.Emprunt;
-import fr.diginamic.biblio.entities.Livre;
+import fr.diginamic.biblio.entites.Emprunt;
+import fr.diginamic.biblio.entites.Livre;
 
 public class EmpruntDao implements IEmpruntDao {
 

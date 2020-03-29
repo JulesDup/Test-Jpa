@@ -15,4 +15,56 @@ public class AssuranceVie extends Compte {
 	@Column(name = "TAUX")
 	private Double taux;
 
+	public AssuranceVie() {
+
+	}
+
+	/**
+	 * Constructeur
+	 * 
+	 * @param datefin
+	 * @param taux
+	 */
+	public AssuranceVie(String numero, LocalDate datefin, Double taux) {
+		super(numero);
+		this.datefin = datefin;
+		this.taux = taux;
+	}
+
+	/**
+	 * Getter
+	 * 
+	 * @return the datefin
+	 */
+	public LocalDate getDatefin() {
+		return datefin;
+	}
+
+	/**
+	 * Getter
+	 * 
+	 * @return the taux
+	 */
+	public Double getTaux() {
+		return taux;
+	}
+
+	/**
+	 * Setter
+	 * 
+	 * @param datefin the datefin to set
+	 */
+	public void setDatefin(LocalDate datefin) {
+		this.datefin = datefin;
+	}
+
+	/**
+	 * Setter
+	 * 
+	 * @param taux the taux to set
+	 */
+	public void setTaux(Double taux) {
+		this.taux = taux;
+	}
+
 }

@@ -13,7 +13,7 @@ import org.omg.CORBA.PRIVATE_MEMBER;
 
 import fr.diginamic.biblio.dao.ILivreDao;
 import fr.diginamic.biblio.dao.LivreDao;
-import fr.diginamic.biblio.entities.Livre;
+import fr.diginamic.biblio.entites.Livre;
 
 public class TestJpa {
 	private static final Logger LOGGER = Logger.getLogger(TestJpa.class.getName());

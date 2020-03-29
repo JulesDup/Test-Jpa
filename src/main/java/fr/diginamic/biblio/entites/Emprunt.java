@@ -1,4 +1,4 @@
-package fr.diginamic.biblio.entities;
+package fr.diginamic.biblio.entites;
 
 import java.util.Set;
 
