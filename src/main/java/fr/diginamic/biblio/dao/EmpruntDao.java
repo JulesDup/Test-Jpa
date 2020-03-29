@@ -13,11 +13,17 @@ import fr.diginamic.biblio.entities.Emprunt;
 import fr.diginamic.biblio.entities.Livre;
 
 public class EmpruntDao implements IEmpruntDao {
+
+	/**
+	 * Constructeur
+	 * 
+	 * @param entityManagerFactory
+	 */
+
 	@Override
 	public List<Livre> getLivresByIdEmprunt(int id) {
 
 		// creation factory et manager
-
 		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("biblio-pu");
 		EntityManager entityManager = entityManagerFactory.createEntityManager();
 //		Réaliser une requête qui permet d’extraire un emprunt et tous ses livres associés.
@@ -39,7 +45,6 @@ public class EmpruntDao implements IEmpruntDao {
 	@Override
 	public List<Emprunt> getEmpruntByClient(int id) {
 		// creation factory et manager
-
 		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("biblio-pu");
 		EntityManager entityManager = entityManagerFactory.createEntityManager();
 //		Réaliser une requête qui permet d’extraire tous les emprunts d’un client donné.

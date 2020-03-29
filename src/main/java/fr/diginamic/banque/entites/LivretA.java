@@ -7,8 +7,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "LIVRET_A")
 public class LivretA extends Compte {
-	@Column(name = "COMPTE")
-	private Compte compte;
+
 	@Column(name = "TAUX")
 	private Double taux;
 

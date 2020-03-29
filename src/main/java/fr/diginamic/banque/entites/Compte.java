@@ -15,8 +15,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
+@Inheritance(strategy = InheritanceType.JOINED)
 @Table(name = "COMPTE")
-@Inheritance(strategy=InheritanceType.JOINED)
 public class Compte {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,5 +28,5 @@ public class Compte {
 	@OneToMany(mappedBy = "compte")
 	private List<Operation> operations;
 	@ManyToMany(mappedBy = "comptes")
-	private List<Client> clients;
+	private List<ClientBanque> clients;
 }

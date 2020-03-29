@@ -19,7 +19,7 @@ public class Banque {
 	@Column(name = "NOM")
 	private String nom;
 	@OneToMany(mappedBy = "banque")
-	private List<Client> clients
+	private List<ClientBanque> clients
 
 	;
 }
