@@ -40,7 +40,7 @@ public class TestMainBanque {
 //		
 //		o Banque
 		Banque bq = new Banque("truc");
-		
+
 //		o Compte
 		Compte cpt1 = new Compte("6654", 400d);
 //		o Operation
@@ -56,17 +56,17 @@ public class TestMainBanque {
 		cl4.setAdresse(new Adresse(2, "impasse de la chamoiserie", 79000, "niort"));
 //		
 //		o insérer un compte associé à 2 clients
-		List<ClientBanque> listComptes = new ArrayList<ClientBanque>();
-		listComptes.add(cl1);
-		listComptes.add(cl2);
-		Compte cpt2 = new Compte("123456", 10000d, listComptes);
+		List<ClientBanque> listClients = new ArrayList<ClientBanque>();
+		listClients.add(cl1);
+		listClients.add(cl2);
+		Compte cpt2 = new Compte("123456", 10000d, listClients);
 
 //		o insérer un client avec plusieurs comptes :
 //			▪ 1 compte de type assurance vie
 		Compte assuranceVie1 = new AssuranceVie("456879", LocalDate.now(), 4500d);
 		List<Compte> compteAssuranceVie = new ArrayList<>();
 		compteAssuranceVie.add(assuranceVie1);
-		cl3.setComptes(compteAssuranceVie);
+//		cl3.setComptes(compteAssuranceVie);
 
 //			▪ 1 compte de type livret A
 		ClientBanque cl5 = new ClientBanque("luc", "machin", LocalDate.of(1964, 6, 27), bq);
@@ -86,7 +86,7 @@ public class TestMainBanque {
 		listVir.add(vir4);
 		cpt3.setOperations(listVir);
 //		o insérer des opérations de type opérations sur un compte
-		Compte cpt4 = new Compte("123456", 10000d, listComptes);
+		Compte cpt4 = new Compte("123456", 10000d);
 		Operation ope2 = new Virement(LocalDateTime.now(), 100d, "parceque", assuranceVie1, "inconu");
 		Operation ope3 = new Virement(LocalDateTime.now(), 100d, "parceque", livretA, "inconu");
 		Operation ope4 = new Virement(LocalDateTime.now(), 300d, "parceque", cpt1, "lui");
@@ -102,13 +102,19 @@ public class TestMainBanque {
 		entityManager.persist(bq);
 		entityManager.persist(cpt1);
 		entityManager.persist(ope1);
+		entityManager.persist(ope2);
 
 		entityManager.persist(cl1);
 		entityManager.persist(cl2);
 		entityManager.persist(cl3);
+
+		entityManager.persist(assuranceVie1);
+		entityManager.persist(livretA);
 		entityManager.persist(cl4);
 
 		entityManager.persist(cpt2);
+		entityManager.persist(cpt3);
+		entityManager.persist(cpt4);
 
 		tr1.commit();
 
