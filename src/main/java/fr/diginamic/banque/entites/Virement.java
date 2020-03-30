@@ -1,5 +1,7 @@
 package fr.diginamic.banque.entites;
 
+import java.time.LocalDateTime;
+
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
@@ -21,6 +23,16 @@ public class Virement extends Operation {
 		super();
 		this.benificiaire = benificiaire;
 	}
+	
+
+	/**Constructeur
+	 * @param benificiaire
+	 */
+	public Virement(LocalDateTime date, Double montant, String motif, Compte compte,String benificiaire) {
+		super( date,  montant,  motif,  compte);
+		this.benificiaire = benificiaire;
+	}
+
 
 	/**
 	 * Getter
